@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "roboto-standard";
+    font-weight: normal;
+    src: url("/src/fonts/Roboto-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+    font-family: "roboto-titles";
+    font-weight: bolder;
+    src: url("/src/fonts/Roboto-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+    font-family: "roboto-subtitles";
+    font-weight: bold;
+    src: url("/src/fonts/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+:root{
+    --color: white;
+    --contrast: gray;
+    --text: black;
+    --main: rgb(250, 73, 73);
+}
+
+.dark{
+    --color: rgb(20, 20, 20);
+    --contrast: gray;
+    --text: white;
+    --main: rgb(250, 73, 73);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto-standard';
+    text-align: center;
+    background-color: var(--color);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px;
+    height: 100px;
+    width: 100%;
+    color: var(--text);
+}
+
+header img{
+    height: 50px;
+}
+
+.menu{
+    z-index: 51;
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    width: 50%;
+    justify-content: center;
+    top: 0;
+    right: -50vw;
+    background-color: rgb(255, 255, 255);
+}
+
+.overlay{
+    z-index: 50;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.178);
+}
+
+.container-overlay{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.274));
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container{
+    height: 40vh;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#main{
+    background-image: url(/src/media/herobackground.png);
+    background-size: cover;
+}
+
+@media only screen and (max-width: 923px) {
+
+}
+
+@media only screen and (min-width: 923px) {
+}
