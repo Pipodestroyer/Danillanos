@@ -25,6 +25,23 @@
     cursor: pointer;
 }
 
+.menu svg{
+    fill: var(--text);
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu button{
+    width: 24px;
+    height: inherit;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
 .navicons button{
     width: 24px;
     height: inherit;

@@ -1,4 +1,5 @@
 const icon = document.getElementById('themechange')
+const mobiletheme = document.getElementById('mobile-themechange')
 const hamburger = document.getElementById('mobile-dropdown')
 const menu = document.getElementById('dropdown')
 const overlay = document.getElementById('overlay')
@@ -23,8 +24,13 @@ icon.addEventListener("click", () =>{
     darkmode = localStorage.getItem('darkmode')
     darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
+mobiletheme.addEventListener("click", () =>{
+    darkmode = localStorage.getItem('darkmode')
+    darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+})
 
 const enableDrop = () => {
+    document.body.classList.add('out')
     menu.classList.add('out')
     overlay.classList.add('out')
     closebtn.classList.add('out')
@@ -33,6 +39,7 @@ const enableDrop = () => {
 }
 
 const disableDrop = () => {
+    document.body.classList.remove('out')
     menu.classList.remove('out')
     overlay.classList.remove('out')
     closebtn.classList.remove('out')
