@@ -146,7 +146,7 @@ p{
         flex-direction: column;
         align-items: right;
         position: fixed;
-        height: 100vh;
+        height: 100dvh;
         width: clamp(300px, 60%, 400px);
         justify-content: end;
         box-sizing: border-box;
