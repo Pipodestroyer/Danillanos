@@ -19,6 +19,7 @@
     --contrast: gray;
     --text: black;
     --main: rgb(250, 73, 73);
+    --overlay: rgba(0, 0, 0, 0.753);
 }
 
 .dark{
@@ -26,6 +27,7 @@
     --contrast: gray;
     --text: white;
     --main: rgb(250, 73, 73);
+    --overlay: rgba(255, 255, 255, 0.39);
 }
 
 body{
@@ -36,6 +38,14 @@ body{
     background-color: var(--color);
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+h1{
+    font-family: 'roboto-titles';
+    font-size: clamp(30px, 10vh, 100px);
+}
+h2{
+    font-family: 'roboto-subtitles';
 }
 
 header{
@@ -53,18 +63,30 @@ header{
 
 header img{
     height: 50px;
+    cursor: pointer;
 }
 
-.menu{
-    z-index: 51;
+header ul{
+    list-style: none;
     display: flex;
-    position: fixed;
-    height: 100vh;
-    width: 50%;
-    justify-content: center;
-    top: 0;
-    right: -50vw;
-    background-color: rgb(255, 255, 255);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    font-family: 'roboto-titles';
+    font-weight: bold;
+}
+
+.navlinks{
+    width: 300px;
+}
+.logo{
+    width: 100px;
+    text-align: left;
 }
 
 .overlay{
@@ -74,7 +96,7 @@ header img{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.178);
+    background-color: var(--overlay);
 }
 
 .container-overlay{
@@ -106,6 +128,10 @@ header img{
     box-sizing: border-box;
     width: 100%;
 }
+p{
+    margin: 0;
+    padding: 0;
+}
 
 #main{
     background-image: url(/src/media/herobackground.png);
@@ -113,8 +139,43 @@ header img{
 }
 
 @media only screen and (max-width: 923px) {
-
+    .navlinks{
+        display: none;
+    }
+    .themechanger, .bagicon{
+        display: none;
+    }
+    .menu{
+        z-index: 51;
+        display: flex;
+        position: fixed;
+        height: 100vh;
+        width: 50%;
+        justify-content: end;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 60px;
+        text-align: right;
+        top: 0;
+        right: 0;
+        display: none;
+        background-color: var(--color);
+    }
+    .menu.out{
+        display: flex !important;
+        background-color: var(--color);
+    }
+    .overlay.out{
+        display: block !important;
+        background-color: rgba(36, 36, 36, 0.137);
+    }
 }
 
 @media only screen and (min-width: 923px) {
+    .mobile-menu, .hamburger, .close{
+    display: none !important;
+    }
+    .menu{
+        display: none;
+    }
 }
