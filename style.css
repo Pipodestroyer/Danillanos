@@ -144,16 +144,6 @@ li{
     padding-top: 130px;
 }
 
-.hero{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
 
 .container{
     height: 40vh;
@@ -171,6 +161,16 @@ p{
 }
 
 @media only screen and (max-width: 923px) {
+    .hero{
+        height: 100dvh;
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
     .button-holder{
         align-items: flex-start;
         justify-content: flex-start;
@@ -268,6 +268,16 @@ p{
         font-size: 40px;
         margin: 0;
         padding: 0;
+    }
+    .hero{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
     }
     .mobile-menu, .hamburger, .close{
         display: none !important;
