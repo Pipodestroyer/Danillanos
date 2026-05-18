@@ -171,14 +171,14 @@ p{
 
 @media only screen and (max-width: 923px) {
     body{
-        width: 100vw;
+        width: 100vw !important;
         margin: 0;
         padding: 0;
         font-family: 'roboto-standard';
         text-align: center;
         background-color: var(--color);
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
     } 
     .button-holder{
         align-items: flex-start;
