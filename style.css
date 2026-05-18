@@ -62,8 +62,12 @@ header{
 }
 
 .text-holder{
+    display: flex;
+    flex-direction: column;
     flex: 1;
     width: 100%;
+    justify-content: center;
+    align-content: center;
 }
 
 .button-holder{
@@ -250,9 +254,6 @@ p{
         margin: 0;
         padding: 0;
     }
-    .hero-logo{
-        height: 180px;
-    }
 }
 
 @media only screen and (min-width: 923px) {
@@ -306,8 +307,5 @@ p{
 
     header.scrolled svg{
         fill: var(--text) !important;
-    }
-    .hero-logo{
-        height: 180px;
     }
 }
