@@ -170,6 +170,16 @@ p{
 }
 
 @media only screen and (max-width: 923px) {
+    body{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: 'roboto-standard';
+        text-align: center;
+        background-color: var(--color);
+        overflow-y: auto;
+        overflow-x: hidden;
+    } 
     .button-holder{
         align-items: flex-start;
         justify-content: flex-start;
