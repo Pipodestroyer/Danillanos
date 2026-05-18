@@ -44,25 +44,60 @@ body.out{
     overflow-y: hidden;
 }
 
-h1{
-    font-family: 'roboto-titles';
-    font-size: clamp(30px, 10vh, 100px);
-}
-h2{
-    font-family: 'roboto-subtitles';
-}
-
 header{
+    transition: background-color 0.3s ease; 
+    z-index: 49;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     margin: 0;
+    top: 0;
+    position: fixed;
     padding: 20px;
     height: 100px;
     width: 100%;
     color: var(--text);
+}
+
+.text-holder{
+    flex: 1;
+    width: 100%;
+}
+
+.button-holder{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button-holder svg{
+    height: 15px;
+}
+
+.button-holder button{
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    height: 55px;
+    border-radius: 15px;
+    border-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+header.scrolled{
+    background-color: var(--color);
 }
 
 header img{
@@ -105,10 +140,11 @@ li{
     padding: 30px;
     justify-content: center;
     align-items: center;
+    padding-top: 130px;
 }
 
 .hero{
-    height: calc(100vh - 100px);
+    height: 100vh;
     width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -134,6 +170,13 @@ p{
 }
 
 @media only screen and (max-width: 923px) {
+    .button-holder{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .hero{
+        text-align: left;
+    }
     .navlinks{
         display: none;
     }
@@ -179,6 +222,14 @@ p{
         padding: 0;
         margin: 0;
     }
+    header .hamburger{
+        fill: white !important;
+    }
+
+    header.scrolled .hamburger{
+        fill: var(--text) !important;
+    }
+
     .menu div{
         display: flex;
         flex-direction: row;
@@ -186,9 +237,37 @@ p{
         height: 50px;
         width: 100%;
     }
+    h1{
+        font-family: 'roboto-titles';
+        font-size: 15vw;
+        margin: 0;
+        padding: 0;
+    }
+    h2{
+        font-family: 'roboto-subtitles';
+        font-size: 5vw;
+        margin: 0;
+        padding: 0;
+    }
+    .hero-logo{
+        height: 180px;
+    }
 }
 
 @media only screen and (min-width: 923px) {
+    h1{
+        font-family: 'roboto-titles';
+        font-size: 200px;
+        margin: 0;
+        padding: 0;
+        height: 200px;
+    }
+    h2{
+        font-family: 'roboto-subtitles';
+        font-size: 40px;
+        margin: 0;
+        padding: 0;
+    }
     .mobile-menu, .hamburger, .close{
         display: none !important;
     }
@@ -203,5 +282,21 @@ p{
         justify-content: space-between;
         padding: 0;
         margin: 0;
+    }
+    header{
+        color: white;
+    }
+    header.scrolled{
+        color: var(--text);
+    }
+    header svg{
+        fill: white !important;
+    }
+
+    header.scrolled svg{
+        fill: var(--text) !important;
+    }
+    .hero-logo{
+        height: 180px;
     }
 }

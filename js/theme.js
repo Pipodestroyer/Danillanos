@@ -5,8 +5,10 @@ const menu = document.getElementById('dropdown')
 const overlay = document.getElementById('overlay')
 const closebtn = document.getElementById('close')
 const hamburgerbtn = document.getElementById('hamburger')
+const header = document.getElementById('scroll-change')
 let darkmode = localStorage.getItem('darkmode')
 let isout = localStorage.getItem('dropdown')
+
 
 const enableDarkmode = () => {
     document.body.classList.add('dark')
@@ -55,4 +57,12 @@ hamburger.addEventListener("click", () =>{
 overlay.addEventListener("click", () =>{
     isout = localStorage.getItem('dropdown')
     isout !== "active" ? enableDrop() : disableDrop()
+})
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
 })
