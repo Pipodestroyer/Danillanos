@@ -2,19 +2,19 @@ const baseDeDatosProductos = [
     // --- CARNES Y EMBUTIDOS ---
     {
         id: 1, nombre: "Chorizo Cuncia", categoria: "carnes",
-        precio: 35000, unidad: "Paquete x10 unidades", stock: 150,
+        precio: 20550, unidad: "Paquete x10 unidades", stock: 150,
         descripcion: "Chorizo marinado en especias de la casa.",
         imagen: "../src/productos/chorizo.jpeg"
     },
     {
         id: 2, nombre: "Papas Francesas", categoria: "carnes",
-        precio: 22000, unidad: "Bolsa 5,5Kg", stock: 80,
-        descripcion: "Preparadas con especias exclusivas del distribuidor. 150gr c/u.",
+        precio: 23000, unidad: "Bolsa 2,5KG", stock: 80,
+        descripcion: "Importadas, congeladas y listas para freir.",
         imagen: "../src/productos/francesas.jpeg"
     },
     {
         id: 3, nombre: "Costillas Ahumadas", categoria: "carnes",
-        precio: 18000, unidad: "Paquete 500g", stock: 200,
+        precio: 16300, unidad: "Paquete 450g", stock: 100,
         descripcion: "Embutido con receta artesanal propia, listo para asar.",
         imagen: "../src/productos/costillas.jpeg"
     },
