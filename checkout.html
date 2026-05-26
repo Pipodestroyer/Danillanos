@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Checkout - Danillanos</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/js/theme.js" defer></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+    <div class="checkout-container">
+        <div class="checkout-steps">
+            <div class="step active">1. Envío</div>
+            <div class="step active">2. Pago</div>
+            <div class="step">3. Confirmación</div>
+        </div>
+
+        <div class="checkout-grid">
+            <form class="checkout-form" onsubmit="event.preventDefault(); alert('¡Simulación de pago exitosa! Redirigiendo...'); window.location.href='index.html';">
+                <h2>Datos de Envío</h2>
+                <input type="text" placeholder="Nombre completo del negocio/persona" required>
+                <input type="text" placeholder="Dirección exacta de entrega" required>
+                <input type="text" placeholder="Ciudad / Municipio" required>
+                
+                <h2 style="margin-top: 30px;">Método de Pago</h2>
+                <div class="payment-methods">
+                    <label class="pay-method"><input type="radio" name="pago" checked> Tarjeta (Crédito/Débito)</label>
+                    <label class="pay-method"><input type="radio" name="pago"> Nequi / Daviplata</label>
+                    <label class="pay-method"><input type="radio" name="pago"> Transferencia Bancaria</label>
+                </div>
+                
+                <div class="card-details">
+                    <input type="text" placeholder="Número de Tarjeta" required>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="MM/AA" required>
+                        <input type="text" placeholder="CVC" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="contact-button" style="background-color: var(--main); width: 100%; margin-top: 20px;">
+                    Procesar Pago Simulado
+                </button>
+            </form>
+
+            <div class="order-summary">
+                <h2>Resumen de Orden</h2>
+                <p>Paquete Costillas BBQ x2 <span style="float:right;">$70.000</span></p>
+                <p>Chorizo Sazón Casa x5 <span style="float:right;">$100.000</span></p>
+                <hr style="border-color: var(--contrast); margin: 15px 0;">
+                <h3>Total <span style="float:right; color: var(--main);">$170.000</span></h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

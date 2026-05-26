@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Danillanos</title>
-        <link rel="icon" type="image/x-icon" href="src/media/lightmode.png">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="icons.css">
-        <script src="/js/index.js" defer></script>
-        <script type="text/javascript" src="/js/theme.js" defer></script>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-    </head>
-    <body>
-        <header id="scroll-change">
-            <div class="logo">
+<head>
+    <title>Catálogo - Danillanos</title>
+    <link rel="icon" type="image/x-icon" href="src/media/lightmode.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
+    <script type="text/javascript" src="/js/theme.js" defer></script>
+    <script src="/js/tienda.js" defer></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+    <header id="scroll-change">
+        <div class="logo">
                 <img class="lightlogo" src="src/media/lightmode.png">
                 <img class="darklogo" src="src/media/darkmode.png">
             </div>
@@ -58,55 +58,49 @@
                 </div>
             </div>
             <div class="overlay" id="overlay" style="display: none;"></div>
-        </header>
-        <div class="hero" id="main">
-            <div class="container-overlay">
-                <div class="text-holder">
-                    <h1>Danillanos</h1>
-                    <h2>Distribuyendo calidad desde 2016</h2>
-                    <p style="margin-top: 50px; font-size: 20px;">Distribuimos todo lo que tu restaurante, salsamentaría, negocio o tienda necesite a través de todo el llano.</p>
-                </div>
-                <div class="button-holder">
-                    <button class="contact-button" style="background-color: var(--main);">
-                        Contactanos 
-                        <svg class="chathover" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m240-240-92 92q-19 19-43.5 8.5T80-177v-623q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240Zm40-160h240q17 0 28.5-11.5T560-440q0-17-11.5-28.5T520-480H280q-17 0-28.5 11.5T240-440q0 17 11.5 28.5T280-400Zm0-120h400q17 0 28.5-11.5T720-560q0-17-11.5-28.5T680-600H280q-17 0-28.5 11.5T240-560q0 17 11.5 28.5T280-520Zm0-120h400q17 0 28.5-11.5T720-680q0-17-11.5-28.5T680-720H280q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640Z"/></svg>
-                        <svg class="chat" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m240-240-92 92q-19 19-43.5 8.5T80-177v-623q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240Zm-34-80h594v-480H160v525l46-45Zm-46 0v-480 480Zm120-80h240q17 0 28.5-11.5T560-440q0-17-11.5-28.5T520-480H280q-17 0-28.5 11.5T240-440q0 17 11.5 28.5T280-400Zm0-120h400q17 0 28.5-11.5T720-560q0-17-11.5-28.5T680-600H280q-17 0-28.5 11.5T240-560q0 17 11.5 28.5T280-520Zm0-120h400q17 0 28.5-11.5T720-680q0-17-11.5-28.5T680-720H280q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640Z"/></svg></span></button>
-                    <button style="background-color: rgb(20, 20, 20);">Ubicación</button>
-                    <button style="background-color: rgb(20, 20, 20);">Catalogo</button>
-                </div>
+    </header>
+
+    <div class="hero catalog-hero" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80'); background-size: cover; background-position: center;">
+        <div class="container-overlay" style="padding-top: 80px;">
+            <div class="text-holder">
+                <h1>Catálogo</h1>
+                <h2>Todo para tu negocio gastronómico</h2>
+                <p style="margin-top: 20px; font-size: 18px; max-width: 600px;">Cárnicos, salsas, insumos y congelados de la más alta calidad.</p>
             </div>
         </div>
-        <section class="banner-sazon">
-            <div class="sazon-content">
-                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="var(--main)"><path d="M280-120v-360q-50 0-85-35t-35-85v-240h60v240q0 25 17.5 42.5T280-540q25 0 42.5-17.5T340-600v-240h60v240q0 50-35 85t-85 35v360h-60Zm400 0v-400l-120-120v-200h240v600q0 50-35 85t-85 35Zm-60-480h120v-240H620v240Z"/></svg>
-                <h2>Sazón 100% Original de la Casa</h2>
-                <p>Nuestros cárnicos industriales (costillas, chorizos, salchichas y carnes de hamburguesa) están marinados y preparados con nuestra receta secreta. Un sabor único que hará destacar a tu negocio.</p>
-            </div>
-        </section>
+    </div>
 
-        <section class="lite-catalog-section">
-            <h2>Los Más Comprados</h2>
-            <div class="product-grid" id="lite-product-grid">
+    <div class="catalog-container">
+        <aside class="filters">
+            <div class="filter-group">
+                <h3>Categoría</h3>
+                <select id="filter-categoria" class="minimal-select" onchange="aplicarFiltros()">
+                    <option value="todos">Todos los productos</option>
+                    <option value="carnes">Carnes y Embutidos</option>
+                    <option value="salsas">Salsas y Aderezos</option>
+                    <option value="congelados">Congelados</option>
+                    <option value="insumos">Insumos y Dulces</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h3>Precio Máximo: <span id="price-display">$150.000</span></h3>
+                <input type="range" id="filter-precio" class="minimal-slider" min="0" max="150000" step="5000" value="150000" oninput="actualizarPrecioDisplay(); aplicarFiltros()">
+            </div>
+
+            <div class="filter-group">
+                <h3>Disponibilidad</h3>
+                <label class="minimal-checkbox">
+                    <input type="checkbox" id="filter-stock" onchange="aplicarFiltros()">
+                    Solo mostrar con stock (> 0)
+                </label>
+            </div>
+        </aside>
+
+        <main>
+            <div class="product-grid" id="full-product-grid">
                 </div>
-            <a href="catalogo.html" class="btn-ver-mas">Ver todo el catálogo</a>
-        </section>
-
-        <footer>
-            <div class="footer-info">
-                <h3>Contacto y Pedidos</h3>
-                <p><strong>Nota:</strong> No contamos con servicio en tienda física. Atención exclusiva por envíos a todo el llano.</p>
-                <br>
-                <a href="https://wa.me/573000000000" target="_blank" class="whatsapp-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80q-33 0-56.5-23.5T0-160v-640q0-33 23.5-56.5T80-880h800q33 0 56.5 23.5T960-800v480q0 33-23.5 56.5T880-240H240L80-80Zm126-240h674v-480H80v606l126-126Z"/></svg>
-                    Pedir por WhatsApp
-                </a>
-            </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15904.606771329124!2d-73.633!3d4.133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0TCsDA3JzU4LjgiTiA3M8KwMzcnNTguOCJX!5e0!3m2!1ses!2sco!4v1600000000000!5m2!1ses!2sco" width="100%" height="200" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </footer>
-
-        <script src="/js/tienda.js" defer></script>
-    </body>
-
+        </main>
+    </div>
+</body>
 </html>
