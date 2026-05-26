@@ -1,97 +1,97 @@
 const baseDeDatosProductos = [
     // --- CARNES Y EMBUTIDOS ---
     {
-        id: 1, nombre: "Costillas de Cerdo Marinadas", categoria: "carnes",
-        precio: 35000, unidad: "KG", stock: 150,
-        descripcion: "Costillas marinadas en nuestra salsa y sazón secreta de la casa.",
-        imagen: "https://images.unsplash.com/photo-1544025162-8111142154ea?w=500&q=80"
+        id: 1, nombre: "Chorizo Cuncia", categoria: "carnes",
+        precio: 35000, unidad: "Paquete x10 unidades", stock: 150,
+        descripcion: "Chorizo marinado en especias de la casa.",
+        imagen: "../src/productos/chorizo.jpeg"
     },
     {
-        id: 2, nombre: "Carne de Hamburguesa Premium", categoria: "carnes",
-        precio: 22000, unidad: "Caja x10 Unidades", stock: 80,
+        id: 2, nombre: "Papas Francesas", categoria: "carnes",
+        precio: 22000, unidad: "Bolsa 5,5Kg", stock: 80,
         descripcion: "Preparadas con especias exclusivas del distribuidor. 150gr c/u.",
-        imagen: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80"
+        imagen: "../src/productos/francesas.jpeg"
     },
     {
-        id: 3, nombre: "Chorizo Artesanal de la Casa", categoria: "carnes",
-        precio: 18000, unidad: "Paquete x12 Unidades", stock: 200,
+        id: 3, nombre: "Costillas Ahumadas", categoria: "carnes",
+        precio: 18000, unidad: "Paquete 500g", stock: 200,
         descripcion: "Embutido con receta artesanal propia, listo para asar.",
-        imagen: "https://images.unsplash.com/photo-1628268909376-e8c44bb3153f?w=500&q=80"
+        imagen: "../src/productos/costillas.jpeg"
     },
     {
         id: 4, nombre: "Tocineta Ahumada", categoria: "carnes",
         precio: 28000, unidad: "KG", stock: 45,
         descripcion: "Tocineta de cerdo ahumada naturalmente, ideal para hamburguesas.",
-        imagen: "https://images.unsplash.com/photo-1606487532398-33e387c932f9?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     // --- SALSAS Y ADEREZOS ---
     {
         id: 5, nombre: "Salsa de Tomate Industrial", categoria: "salsas",
         precio: 25000, unidad: "Galón (4 Litros)", stock: 60,
         descripcion: "Salsa de tomate de alto rendimiento para comidas rápidas.",
-        imagen: "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 6, nombre: "Mayonesa Comercial", categoria: "salsas",
         precio: 32000, unidad: "Galón (4 Litros)", stock: 50,
         descripcion: "Mayonesa consistente, excelente para salsamentarías.",
-        imagen: "https://images.unsplash.com/photo-1585524364020-038202ebde49?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 7, nombre: "Bolsitas de Salsas Mixtas", categoria: "salsas",
         precio: 12000, unidad: "Display x100 Unidades", stock: 300,
         descripcion: "Sachets individuales (Tomate, Mayonesa, Mostaza).",
-        imagen: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     // --- CONGELADOS ---
     {
         id: 8, nombre: "Papas Fritas Porcionadas", categoria: "congelados",
         precio: 15000, unidad: "Bolsa x2.5 KG", stock: 120,
         descripcion: "Papas a la francesa corte clásico, congeladas y listas para freír.",
-        imagen: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 9, nombre: "Milanesa de Pollo", categoria: "congelados",
         precio: 24000, unidad: "Caja x10 Unidades", stock: 40,
         descripcion: "Filetes de pechuga empanizados y congelados.",
-        imagen: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 10, nombre: "Empanadas de Carne Congeladas", categoria: "congelados",
         precio: 20000, unidad: "Bolsa x20 Unidades", stock: 0, // Sin stock para probar filtro
         descripcion: "Empanadas listas para freír, relleno abundante.",
-        imagen: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     // --- INSUMOS Y DULCES ---
     {
         id: 11, nombre: "Sazonador en Polvo Multiusos", categoria: "insumos",
         precio: 18000, unidad: "KG", stock: 200,
         descripcion: "Sazón industrial para carnes y sopas.",
-        imagen: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 12, nombre: "Arequipe Repostero", categoria: "insumos",
         precio: 16000, unidad: "Tarro x2.5 KG", stock: 35,
         descripcion: "Ideal para postres y obleas. Textura firme.",
-        imagen: "https://images.unsplash.com/photo-1619864208453-6ce4fc798835?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 13, nombre: "Salsa Dulce de Mora", categoria: "insumos",
         precio: 14000, unidad: "Litro", stock: 45,
         descripcion: "Salsa de mora concentrada para helados y obleas.",
-        imagen: "https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 14, nombre: "Obleas Tradicionales", categoria: "insumos",
         precio: 8000, unidad: "Paquete x100 Unidades", stock: 90,
         descripcion: "Galleta de oblea fresca y crujiente.",
-        imagen: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     },
     {
         id: 15, nombre: "Miga de Pan Panko", categoria: "insumos",
         precio: 12000, unidad: "KG", stock: 150,
         descripcion: "Miga de pan extra crujiente para apanar.",
-        imagen: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80"
+        imagen: "../src/media/darkmode.png"
     }
 ];
 
