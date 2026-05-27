@@ -1,8 +1,13 @@
 const icon = document.getElementById('themechange')
 const mobiletheme = document.getElementById('mobile-themechange')
 const hamburger = document.getElementById('mobile-dropdown')
+const iscart = document.getElementById('shoppingbag')
+const iscartmobile = document.getElementById('shoppingbag-mobile')
+const thecartmenu = document.getElementById('global-shopping-cart')
 const menu = document.getElementById('dropdown')
 const overlay = document.getElementById('overlay')
+const overlaycarro = document.getElementById('overlaycarrito')
+const closecart = document.getElementById('closethecart')
 const closebtn = document.getElementById('close')
 const hamburgerbtn = document.getElementById('hamburger')
 const header = document.getElementById('scroll-change')
@@ -49,6 +54,20 @@ const disableDrop = () => {
     localStorage.setItem('dropdown', null)
 }
 
+const enableCart = () => {
+    document.body.classList.add('out')
+    thecartmenu.classList.add('out')
+    overlaycarro.classList.add('out')
+    localStorage.setItem('carrito', 'active')
+}
+
+const disableCart = () => {
+    document.body.classList.remove('out')
+    thecartmenu.classList.remove('out')
+    overlaycarro.classList.remove('out')
+    localStorage.setItem('carrito', null)
+}
+
 hamburger.addEventListener("click", () =>{
     isout = localStorage.getItem('dropdown')
     isout !== "active" ? enableDrop() : disableDrop()
@@ -57,6 +76,26 @@ hamburger.addEventListener("click", () =>{
 overlay.addEventListener("click", () =>{
     isout = localStorage.getItem('dropdown')
     isout !== "active" ? enableDrop() : disableDrop()
+})
+
+iscart.addEventListener("click", () =>{
+    cartout = localStorage.getItem('carrito')
+    cartout !== "active" ? enableCart() : disableCart()
+})
+
+iscartmobile.addEventListener("click", () =>{
+    cartout = localStorage.getItem('carrito')
+    cartout !== "active" ? enableCart() : disableCart()
+})
+
+overlaycarro.addEventListener("click", () =>{
+    isout = localStorage.getItem('carrito')
+    isout !== "active" ? enableCart() : disableCart()
+})
+
+closecart.addEventListener("click", () =>{
+    cartout = localStorage.getItem('carrito')
+    cartout !== "active" ? enableCart() : disableCart()
 })
 
 window.addEventListener('scroll', () => {

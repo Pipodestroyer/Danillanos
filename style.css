@@ -20,6 +20,7 @@
     --text: black;
     --main: rgb(250, 73, 73);
     --overlay: rgba(0, 0, 0, 0.753);
+    --over: rgb(240, 240, 240);
 }
 
 .dark{
@@ -28,6 +29,7 @@
     --text: white;
     --main: rgb(250, 73, 73);
     --overlay: rgba(255, 255, 255, 0.39);
+    --over:rgb(26, 26, 26);
 }
 
 .cart{
@@ -59,7 +61,7 @@ div, div *{
 }
 
 body.out{
-    overflow-y: hidden;
+    overflow-y: visible;
 }
 
 header{
@@ -156,6 +158,17 @@ li{
     background-color: var(--overlay);
 }
 
+.overlaycarrito{
+    z-index: 50;
+    height: 150vh;
+    width: 150vw;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: var(--overlay);
+}
+
 .container-overlay{
     position: absolute;
     height: inherit;
@@ -184,6 +197,74 @@ p{
 #main{
     background-image: url(/src/media/herobackground.png);
     background-size: cover;
+}
+
+.shoppingcart{
+    z-index: 52;
+    flex-direction: column;
+    align-items: right;
+    position: fixed;
+    height: 100dvh;
+    width: clamp(300px, 60%, 400px);
+    justify-content: end;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 60px;
+    padding-top: 96px;
+    text-align: right;
+    top: 0;
+    right: 0;
+    display: none;
+    background-color: var(--color);
+    color: var(--contrast);
+    text-align: center !important;
+}
+
+.shoppingcart.out{
+    display: flex !important;
+}
+
+.shoppingcart .cartbuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+
+.controllers{
+    background-color: var(--over);
+    border-radius: 8px;
+    border: none;
+    fill: var(--text);
+    width: 50px;
+}
+
+.mainbuy{
+    border-radius: 15px;
+    background-color: var(--main);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.shoppingcart .maincart{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+}
+
+.maincart svg{
+    width: 100%;
+}
+
+.overlaycarrito.out{
+    display: block !important;
+    background-color: rgba(36, 36, 36, 0.137);
 }
 
 @media only screen and (max-width: 923px) {
@@ -245,10 +326,12 @@ p{
         display: none;
         background-color: var(--color);
     }
+
     .menu.out{
         display: flex !important;
         background-color: var(--color);
     }
+  
     .overlay.out{
         display: block !important;
         background-color: rgba(36, 36, 36, 0.137);
@@ -394,7 +477,9 @@ p{
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
-.product-card:hover { transform: translateY(-5px); }
+.product-card:hover { 
+    transform: translateY(-5px); 
+}
 
 .product-img {
     height: 200px;
