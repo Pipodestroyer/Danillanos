@@ -193,7 +193,7 @@ p{
     }
     .text-holder img{
         height: auto;
-        width: clamp(150px, 50%, 260px);
+        width: clamp(50px, 50vh, 150px);
         align-self: self-start;
     }
     .product-grid{
