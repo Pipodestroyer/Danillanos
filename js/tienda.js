@@ -127,7 +127,6 @@ const baseDeDatosProductos = [
     },
 ];
 
-// --- SISTEMA DE CARRITO ---
 let carrito = JSON.parse(localStorage.getItem('danillanos_carrito')) || [];
 
 function guardarCarrito() {
