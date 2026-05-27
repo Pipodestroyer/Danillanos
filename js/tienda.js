@@ -1,5 +1,4 @@
 const baseDeDatosProductos = [
-    // --- CARNES Y EMBUTIDOS ---
     {
         id: 1, nombre: "Chorizo Cuncia", categoria: "carnes",
         precio: 20550, unidad: "Paquete x10 unidades", stock: 150,
@@ -7,7 +6,7 @@ const baseDeDatosProductos = [
         imagen: "src/productos/chorizo.jpeg"
     },
     {
-        id: 2, nombre: "Papas Francesas", categoria: "carnes",
+        id: 2, nombre: "Papas Francesas", categoria: "congelados",
         precio: 23000, unidad: "Bolsa 2,5KG", stock: 80,
         descripcion: "Importadas, congeladas y listas para freir.",
         imagen: "src/productos/francesas.jpeg"
@@ -15,84 +14,117 @@ const baseDeDatosProductos = [
     {
         id: 3, nombre: "Costillas Ahumadas", categoria: "carnes",
         precio: 16300, unidad: "Paquete 450g", stock: 100,
-        descripcion: "Embutido con receta artesanal propia, listo para asar.",
+        descripcion: "Marinadas con nuestra receta artesanal propia, listas para asar.",
         imagen: "src/productos/costillas.jpeg"
     },
     {
-        id: 4, nombre: "Tocineta Ahumada", categoria: "carnes",
-        precio: 28000, unidad: "KG", stock: 45,
-        descripcion: "Tocineta de cerdo ahumada naturalmente, ideal para hamburguesas.",
-        imagen: "src/media/darkmode.png"
-    },
-    // --- SALSAS Y ADEREZOS ---
-    {
-        id: 5, nombre: "Salsa de Tomate Industrial", categoria: "salsas",
-        precio: 25000, unidad: "Galón (4 Litros)", stock: 60,
-        descripcion: "Salsa de tomate de alto rendimiento para comidas rápidas.",
-        imagen: "src/media/darkmode.png"
+        id: 4, nombre: "Alitas Ahumadas", categoria: "carnes",
+        precio: 15000, unidad: "Paquete 500g", stock: 45,
+        descripcion: "Alitas de pollo ahumadas, sasonadas y listas para freir.",
+        imagen: "src/productos/alitasahumadas.jpeg"
     },
     {
-        id: 6, nombre: "Mayonesa Comercial", categoria: "salsas",
-        precio: 32000, unidad: "Galón (4 Litros)", stock: 50,
-        descripcion: "Mayonesa consistente, excelente para salsamentarías.",
-        imagen: "src/media/darkmode.png"
+        id: 5, nombre: "Butifarra", categoria: "carnes",
+        precio: 10400, unidad: "Paquete 450g", stock: 60,
+        descripcion: "Butifarras sasonadas a la perfección, listas para asar.",
+        imagen: "src/productos/butifarras.jpeg"
     },
     {
-        id: 7, nombre: "Bolsitas de Salsas Mixtas", categoria: "salsas",
-        precio: 12000, unidad: "Display x100 Unidades", stock: 300,
-        descripcion: "Sachets individuales (Tomate, Mayonesa, Mostaza).",
-        imagen: "src/media/darkmode.png"
-    },
-    // --- CONGELADOS ---
-    {
-        id: 8, nombre: "Papas Fritas Porcionadas", categoria: "congelados",
-        precio: 15000, unidad: "Bolsa x2.5 KG", stock: 120,
-        descripcion: "Papas a la francesa corte clásico, congeladas y listas para freír.",
-        imagen: "src/media/darkmode.png"
+        id: 6, nombre: "Carne de hamburguesa", categoria: "carnes",
+        precio: 26300, unidad: "Paquete x10 unidades", stock: 50,
+        descripcion: "Carnes de hamburguesa sasonadas, listas para asar.",
+        imagen: "src/productos/carnehamburg.jpeg"
     },
     {
-        id: 9, nombre: "Milanesa de Pollo", categoria: "congelados",
-        precio: 24000, unidad: "Caja x10 Unidades", stock: 40,
-        descripcion: "Filetes de pechuga empanizados y congelados.",
-        imagen: "src/media/darkmode.png"
+        id: 7, nombre: "Chorizo mini cuncia x4", categoria: "carnes",
+        precio: 5900, unidad: "Paquete x4", stock: 300,
+        descripcion: "Nuestro chorizo cuncia artesanal, mismo sabor, tamaño mini.",
+        imagen: "src/productos/chorizominicuncia.jpeg"
     },
     {
-        id: 10, nombre: "Empanadas de Carne Congeladas", categoria: "congelados",
-        precio: 20000, unidad: "Bolsa x20 Unidades", stock: 0,
-        descripcion: "Empanadas listas para freír, relleno abundante.",
-        imagen: "src/media/darkmode.png"
-    },
-    // --- INSUMOS Y DULCES ---
-    {
-        id: 11, nombre: "Sazonador en Polvo Multiusos", categoria: "insumos",
-        precio: 18000, unidad: "KG", stock: 200,
-        descripcion: "Sazón industrial para carnes y sopas.",
-        imagen: "src/media/darkmode.png"
+        id: 8, nombre: "Chorizo mini cuncia x8", categoria: "carnes",
+        precio: 10900, unidad: "Paquete x8", stock: 300,
+        descripcion: "Nuestro chorizo cuncia artesanal, mismo sabor, tamaño mini.",
+        imagen: "src/productos/chorizominicuncia.jpeg"
     },
     {
-        id: 12, nombre: "Arequipe Repostero", categoria: "insumos",
-        precio: 16000, unidad: "Tarro x2.5 KG", stock: 35,
-        descripcion: "Ideal para postres y obleas. Textura firme.",
-        imagen: "src/media/darkmode.png"
+        id: 9, nombre: "Chorizo santarrosano x5", categoria: "carnes",
+        precio: 10900, unidad: "Paquete x5", stock: 40,
+        descripcion: "Nuestro chorizo artesanal santarrosano.",
+        imagen: "src/productos/chorizosanta.jpeg"
     },
     {
-        id: 13, nombre: "Salsa Dulce de Mora", categoria: "insumos",
-        precio: 14000, unidad: "Litro", stock: 45,
-        descripcion: "Salsa de mora concentrada para helados y obleas.",
-        imagen: "src/media/darkmode.png"
+        id: 10, nombre: "Chorizo santarrosano x10", categoria: "carnes",
+        precio: 21350, unidad: "Paquete x10", stock: 40,
+        descripcion: "Nuestro chorizo artesanal santarrosano.",
+        imagen: "src/productos/chorizosanta.jpeg"
     },
     {
-        id: 14, nombre: "Obleas Tradicionales", categoria: "insumos",
-        precio: 8000, unidad: "Paquete x100 Unidades", stock: 90,
-        descripcion: "Galleta de oblea fresca y crujiente.",
-        imagen: "src/media/darkmode.png"
+        id: 11, nombre: "Costilla cali", categoria: "carnes",
+        precio: 75900, unidad: "3KG", stock: 200,
+        descripcion: "3KG de nuestra costilla carnuda.",
+        imagen: "src/productos/costillacali.jpeg"
     },
     {
-        id: 15, nombre: "Miga de Pan Panko", categoria: "insumos",
-        precio: 12000, unidad: "KG", stock: 150,
-        descripcion: "Miga de pan extra crujiente para apanar.",
-        imagen: "src/media/darkmode.png"
-    }
+        id: 12, nombre: "Costilla premium", categoria: "carnes",
+        precio: 14300, unidad: "Paquete 450g", stock: 35,
+        descripcion: "Ideales para todas tus preparaciones.",
+        imagen: "src/productos/costillapremium.jpeg"
+    },
+    {
+        id: 13, nombre: "Costilla sin hueso", categoria: "carnes",
+        precio: 8000, unidad: "Paquete 250g", stock: 45,
+        descripcion: "Costillas sin hueso, ideales para todo tipo de preparaciones.",
+        imagen: "src/productos/costillasinhueso.jpeg"
+    },
+    {
+        id: 14, nombre: "Costilla sin hueso", categoria: "carnes",
+        precio: 16000, unidad: "Paquete 500g", stock: 45,
+        descripcion: "Costillas sin hueso, ideales para todo tipo de preparaciones.",
+        imagen: "src/productos/costillasinhueso.jpeg"
+    },
+    {
+        id: 15, nombre: "Papa criolla", categoria: "congelados",
+        precio: 11800, unidad: "Paquete 1000g", stock: 150,
+        descripcion: "Papas criollas congeladas listas para freir.",
+        imagen: "src/productos/criolla.jpeg"
+    },
+    {
+        id: 16, nombre: "Papa criolla", categoria: "congelados",
+        precio: 6100, unidad: "Paquete libra", stock: 200,
+        descripcion: "Papas criollas congeladas listas para freir.",
+        imagen: "src/productos/criolla.jpeg"
+    },
+    {
+        id: 17, nombre: "Hamburguesa de pollo apanado", categoria: "carnes",
+        precio: 14000, unidad: "Paquete 5 unidades", stock: 99,
+        descripcion: "Hamburguesa de pollo apanada, congelada y lista para freir en casa.",
+        imagen: "src/productos/hamburgdepolloapanado.jpeg"
+    },
+    {
+        id: 18, nombre: "Hamburguesa de pollo apanado", categoria: "carnes",
+        precio: 64200, unidad: "Paquete 22 unidades", stock: 180,
+        descripcion: "Hamburguesa de pollo apanada, congelada y lista para freir en casa.",
+        imagen: "src/productos/hamburgdepolloapanado.jpeg"
+    },
+    {
+        id: 19, nombre: "Hamburguesa llanera", categoria: "carnes",
+        precio: 20200, unidad: "Paquete 90g", stock: 122,
+        descripcion: "Carne de hamburguesa artesanal y con todo el sabor llanero, lista para asar.",
+        imagen: "src/productos/hamburgllanera.jpeg"
+    },
+    {
+        id: 20, nombre: "Hamburguesa preasada", categoria: "carnes",
+        precio: 6000, unidad: "Paquete 500g", stock: 253,
+        descripcion: "Hamburguesa preasada, congelada y lista para freir en casa.",
+        imagen: "src/productos/hamburgpollo.jpeg"
+    },
+    {
+        id: 21, nombre: "Jamon ahumado JJ", categoria: "embutidos",
+        precio: 7800, unidad: "Paquete 500g", stock: 83,
+        descripcion: "Jamón con el toque ahumado.",
+        imagen: "src/productos/jamonahumado.jpeg"
+    },
 ];
 
 // --- SISTEMA DE CARRITO ---
