@@ -148,6 +148,34 @@ window.addToCart = function(id) {
     if (typeof enableCart === "function") enableCart();
 }
 
+window.PlusItem = function(id){
+    const producto = baseDeDatosProductos.find(p => p.id === id);
+    if (!producto) return;
+    const item = carrito.find(p => p.id === id);
+    if (item) {
+        item.cantidad += 1;
+    } else {
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+    guardarCarrito();
+    actualizarCarritoUI();
+    console.log('añadido');
+}
+
+window.MinusItem = function(id){
+    const producto = baseDeDatosProductos.find(p => p.id === id);
+    if (!producto) return;
+    const item = carrito.find(p => p.id === id);
+    if (item) {
+        item.cantidad -= 1;
+    } else {
+        carrito.push({ ...producto, cantidad: 0 });
+    }
+    guardarCarrito();
+    actualizarCarritoUI();
+    console.log('eliminado');
+}
+
 window.removeFromCart = function(id) {
     carrito = carrito.filter(p => p.id !== id);
     guardarCarrito();
