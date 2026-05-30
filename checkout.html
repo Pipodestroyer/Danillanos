@@ -71,10 +71,10 @@
                 
                 <form id="step-1" class="checkout-form step-content active" onsubmit="event.preventDefault(); nextStep(2);">
                     <h2>Datos de Envío</h2>
-                    <input type="text" placeholder="Nombre completo del negocio/persona" required>
-                    <input type="text" placeholder="Dirección exacta de entrega" required>
-                    <input type="text" placeholder="Ciudad / Municipio" required>
-                    <input type="tel" placeholder="Número de contacto" required>
+                    <input type="text" id="envio-nombre" placeholder="Nombre completo del negocio/persona" required>
+                    <input type="text" id="envio-direccion" placeholder="Dirección exacta de entrega" required>
+                    <input type="text" id="envio-ciudad" placeholder="Ciudad / Municipio" required>
+                    <input type="tel" id="envio-telefono" placeholder="Número de contacto" required>
                     
                     <button type="submit" class="contact-button" style="background-color: var(--main); width: 100%; margin-top: 20px; font-weight: bold; border-radius: 10px; cursor: pointer; border: none; padding: 15px; color: white;">
                         Continuar al Pago
@@ -141,69 +141,79 @@
     </div>
 
     <script>
-        window.renderCheckoutSummary = function() {
-            let car = JSON.parse(localStorage.getItem('danillanos_carrito')) || [];
-            const container = document.getElementById('checkout-items');
-            const totalC = document.getElementById('checkout-total');
-            
-            if(car.length === 0){
-                container.innerHTML = '<p style="color:var(--contrast);">No hay productos.</p>';
-                totalC.innerText = '$0';
-                document.getElementById('btn-finalizar').disabled = true;
-                document.getElementById('btn-finalizar').style.opacity = '0.5';
-                return;
-            }
-            
-            let html = '';
-            let total = 0;
-            car.forEach(i => {
-                let sTotal = i.precio * i.cantidad;
-                total += sTotal;
-                html += `<div class="summary-item">
-                            <span>${i.cantidad}x ${i.nombre}</span>
-                            <span>$${sTotal.toLocaleString('es-CO')}</span>
-                         </div>`;
-            });
-            container.innerHTML = html;
-            totalC.innerText = '$' + total.toLocaleString('es-CO');
+    window.renderCheckoutSummary = function() {
+        let car = JSON.parse(localStorage.getItem('danillanos_carrito')) || [];
+        const container = document.getElementById('checkout-items');
+        const totalC = document.getElementById('checkout-total');
+        
+        if(car.length === 0){
+            container.innerHTML = '<p style="color:var(--contrast);">No hay productos.</p>';
+            totalC.innerText = '$0';
+            document.getElementById('btn-finalizar').disabled = true;
+            document.getElementById('btn-finalizar').style.opacity = '0.5';
+            return;
+        }
+        
+        let html = '';
+        let total = 0;
+        car.forEach(i => {
+            let sTotal = i.precio * i.cantidad;
+            total += sTotal;
+            html += `<div class="summary-item">
+                        <span>${i.cantidad}x ${i.nombre}</span>
+                        <span>$${sTotal.toLocaleString('es-CO')}</span>
+                     </div>`;
+        });
+        container.innerHTML = html;
+        totalC.innerText = '$' + total.toLocaleString('es-CO');
+    };
+
+    function nextStep(step) {
+        document.querySelectorAll('.step-content').forEach(e => e.classList.remove('active'));
+        document.getElementById('step-' + step).classList.add('active');
+        
+        document.querySelectorAll('.step').forEach(e => e.classList.remove('active'));
+        for(let i = 1; i <= step; i++){
+            document.getElementById('indicator-' + i).classList.add('active');
+        }
+    }
+
+    function toggleCardDetails() {
+        const isCard = document.querySelector('input[name="pago"]:checked').value === 'tarjeta';
+        const cardBlock = document.getElementById('card-inputs');
+        const inputs = cardBlock.querySelectorAll('input');
+        
+        if(isCard) {
+            cardBlock.style.display = 'block';
+            inputs.forEach(i => i.setAttribute('required', 'true'));
+        } else {
+            cardBlock.style.display = 'none';
+            inputs.forEach(i => i.removeAttribute('required'));
+        }
+    }
+
+    function processCheckout() {
+        // Recolectar datos del formulario
+        const datosEnvio = {
+            nombre: document.getElementById('envio-nombre').value,
+            direccion: document.getElementById('envio-direccion').value,
+            ciudad: document.getElementById('envio-ciudad').value,
+            telefono: document.getElementById('envio-telefono').value,
+            metodoPago: document.querySelector('input[name="pago"]:checked').value.toUpperCase()
         };
 
-        function nextStep(step) {
-            document.querySelectorAll('.step-content').forEach(e => e.classList.remove('active'));
-            document.getElementById('step-' + step).classList.add('active');
-            
-            document.querySelectorAll('.step').forEach(e => e.classList.remove('active'));
-            for(let i = 1; i <= step; i++){
-                document.getElementById('indicator-' + i).classList.add('active');
+        nextStep(3); // Mostrar pantalla de carga
+        const texto = document.getElementById('process-text');
+        
+        setTimeout(() => { texto.innerText = "Generando orden de pedido..."; }, 1000);
+        setTimeout(() => { texto.innerText = "Abriendo WhatsApp..."; }, 2500);
+        setTimeout(() => { 
+            // En lugar de una alerta vacía, ¡llamamos a la función real de WhatsApp!
+            if(typeof enviarPedidoWhatsApp === "function") {
+                enviarPedidoWhatsApp(datosEnvio);
             }
-        }
-
-        function toggleCardDetails() {
-            const isCard = document.querySelector('input[name="pago"]:checked').value === 'tarjeta';
-            const cardBlock = document.getElementById('card-inputs');
-            const inputs = cardBlock.querySelectorAll('input');
-            
-            if(isCard) {
-                cardBlock.style.display = 'block';
-                inputs.forEach(i => i.setAttribute('required', 'true'));
-            } else {
-                cardBlock.style.display = 'none';
-                inputs.forEach(i => i.removeAttribute('required'));
-            }
-        }
-
-        function processCheckout() {
-            nextStep(3);
-            const texto = document.getElementById('process-text');
-            
-            setTimeout(() => { texto.innerText = "Autorizando cobro con pasarela de pago..."; }, 1500);
-            setTimeout(() => { texto.innerText = "Generando factura electrónica..."; }, 3500);
-            setTimeout(() => { 
-                alert("¡Esto solo es un ejemplo visual, no se te ha hecho ningun cobro!");
-                if(typeof clearCart === "function") clearCart(); 
-                window.location.href = '/index.html'; 
-            }, 5500);
-        }
-    </script>
+        }, 3500);
+    }
+</script>
 </body>
 </html>
