@@ -372,7 +372,7 @@ window.enviarPedidoWhatsApp = function(datosEnvio) {
     if (carrito.length === 0) return;
 
     // ⚠️ REEMPLAZA ESTE NÚMERO POR EL TUYO (Asegúrate de poner el código del país sin el +, ej: 57 para Colombia)
-    const numeroWhatsApp = "3208047885"; 
+    const numeroWhatsApp = "573182841896"; 
     
     let mensaje = "¡Hola Danillanos! Me gustaría hacer el siguiente pedido:\n\n";
     
