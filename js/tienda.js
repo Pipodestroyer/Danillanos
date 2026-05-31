@@ -127,14 +127,12 @@ const baseDeDatosProductos = [
     },
 ];
 
-// --- SISTEMA DE CARRITO ---
 let carrito = JSON.parse(localStorage.getItem('danillanos_carrito')) || [];
 
 function guardarCarrito() {
     localStorage.setItem('danillanos_carrito', JSON.stringify(carrito));
 }
 
-// Modificado para aceptar una cantidad específica desde afuera del carrito
 window.addToCart = function(id, fromCard = false) {
     const producto = baseDeDatosProductos.find(p => p.id === id);
     if (!producto) return;
@@ -219,9 +217,9 @@ function actualizarCarritoUI() {
                         $${item.precio.toLocaleString('es-CO')} c/u
                     </p>
                     <div style="display:flex; align-items:center; gap:8px; margin-top:5px;">
-                        <button onclick="updateQty(${item.id}, -1)" style="width:25px; height:25px; border-radius:50%; border:1px solid var(--contrast); background:transparent; fill:var(--text); cursor:pointer;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M240-440q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h480q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H240Z"/></svg></button>
+                        <button onclick="updateQty(${item.id}, -1)" style="width:25px; height:25px; border-radius:50%; border:none; background:var(--over); fill:var(--text); cursor:pointer;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M240-440q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h480q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H240Z"/></svg></button>
                         <span style="font-size:14px; font-weight:bold;">${item.cantidad}</span>
-                        <button onclick="updateQty(${item.id}, 1)" style="width:25px; height:25px; border-radius:50%; border:1px solid var(--contrast); background:transparent; fill:var(--text); cursor:pointer;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg></button>
+                        <button onclick="updateQty(${item.id}, 1)" style="width:25px; height:25px; border-radius:50%; border:none; background:var(--over); fill:var(--text); cursor:pointer;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg></button>
                     </div>
                 </div>
                 <button onclick="removeFromCart(${item.id})" style="background:none; border:none; color:var(--main); cursor:pointer; padding:5px;">
@@ -248,21 +246,17 @@ window.changeQtyInput = function(id, change) {
     input.value = newValue;
 }
 
-// NUEVO BUILDER DE TARJETAS
-// NUEVO BUILDER DE TARJETAS (CON PASTILLA DE STOCK)
 function generarCard(producto) {
-    // Mantenemos la etiqueta sobre la imagen por si tienes estilos CSS aplicados a "stock-badge"
+
     const disponiblidad = producto.stock > 0 
         ? `<span class="stock-badge">Disponibles: ${producto.stock}</span>` 
         : `<span class="stock-badge out-stock">Agotado</span>`;
 
-    // Lógica visual para la pastilla de stock (rojo si está agotado, normal si hay existencias)
     const colorFondoStock = producto.stock > 0 ? "var(--over)" : "#ffe5e5";
     const colorTextoStock = producto.stock > 0 ? "var(--contrast)" : "#d93025";
     const bordeStock = producto.stock > 0 ? "var(--contrast)" : "#d93025";
     const textoStock = producto.stock > 0 ? `Stock: ${producto.stock}` : `Agotado`;
 
-    // Pastillas (Badges) de Categoría, Unidad y STOCK
     const pastillas = `
         <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
             <span style="background: ${colorFondoStock}; color: ${colorTextoStock}; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold;">
@@ -295,7 +289,7 @@ function generarCard(producto) {
 
                 <div class="product-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
                     
-                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; border: 1px solid var(--contrast); border-radius: 8px; background: var(--over); height: 45px; overflow: hidden;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; border:none; border-radius: 8px; background: var(--over); height: 45px; overflow: hidden;">
                         
                         <button onclick="changeQtyInput(${producto.id}, -1)" ${producto.stock === 0 ? 'disabled' : ''} style="width: 50px; height: 100%; background: transparent; border: none; fill: var(--text); cursor: pointer; font-size: 20px; font-weight: bold; transition: background 0.2s; opacity: 0.5; display:flex; align-items:center; justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M240-440q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h480q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H240Z"/></svg></button>
                         
@@ -315,7 +309,6 @@ function generarCard(producto) {
     `;
 }
 
-// LÓGICA DE FILTRADO Y RENDERIZADO
 function renderizarProductos(productos) {
     const container = document.getElementById('full-product-grid');
     if (container) {
@@ -347,7 +340,6 @@ function actualizarPrecioDisplay() {
     document.getElementById('price-display').innerText = "$" + parseInt(val).toLocaleString('es-CO');
 }
 
-// INICIALIZACIÓN
 document.addEventListener('DOMContentLoaded', () => {
     const liteContainer = document.getElementById('lite-product-grid');
     if (liteContainer) liteContainer.innerHTML = baseDeDatosProductos.slice(0, 3).map(generarCard).join('');
@@ -367,11 +359,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof renderCheckoutSummary === "function") renderCheckoutSummary();
 });
 
-// NUEVA FUNCIÓN PARA ENVIAR POR WHATSAPP
 window.enviarPedidoWhatsApp = function(datosEnvio) {
     if (carrito.length === 0) return;
 
-    // ⚠️ REEMPLAZA ESTE NÚMERO POR EL TUYO (Asegúrate de poner el código del país sin el +, ej: 57 para Colombia)
     const numeroWhatsApp = "573182841896"; 
     
     let mensaje = "¡Hola Danillanos! Me gustaría hacer el siguiente pedido:\n\n";
@@ -394,11 +384,9 @@ window.enviarPedidoWhatsApp = function(datosEnvio) {
 
     mensaje += `\n¡Quedo muy atento a su confirmación! Gracias.`;
 
-    // Abrir WhatsApp en una nueva pestaña con el texto prearmado
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
-    
-    // Limpiamos el carrito porque el pedido ya se hizo
+
     clearCart();
     window.location.href = '/index.html'; 
 }
