@@ -246,6 +246,11 @@ p{
     border: none;
     fill: var(--text);
     width: 50px;
+    cursor: pointer;
+}
+
+.controllers:disabled{
+    cursor: not-allowed !important;
 }
 
 .mainbuy{
@@ -254,6 +259,11 @@ p{
     border: none;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.mainbuy:disabled{
+    cursor: not-allowed !important;
 }
 
 .shoppingcart .maincart{
@@ -857,4 +867,14 @@ footer {
     .checkout-grid { 
         grid-template-columns: 1fr; 
     } 
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield; /* Para Firefox */
 }
