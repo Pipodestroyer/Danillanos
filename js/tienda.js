@@ -147,7 +147,7 @@ function actualizarCarritoUI() {
             total += item.precio * item.cantidad;
             return `
             <div style="display:flex; gap:10px; align-items:center; border-bottom: 1px solid var(--over); padding-bottom:10px;">
-                <img src="/${item.imagen}" style="width:50px; height:50px; object-fit:cover; border-radius:8px;">
+                <img src="${item.imagen}" style="width:50px; height:50px; object-fit:cover; border-radius:8px;">
                 <div style="flex:1;">
                     <h4 style="margin:0; font-size:14px; color: var(--text);">${item.nombre}</h4>
                     <p style="margin:2px 0 0 0; font-size:12px; color:var(--contrast);">
