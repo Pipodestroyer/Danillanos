@@ -191,6 +191,14 @@ li{
     padding-top: 130px;
 }
 
+.agotado-disable{
+    opacity: 0.7 !important;
+    cursor: not-allowed !important;
+}
+
+.agotado-disable svg{
+    opacity: 0.7 !important;
+}
 
 .container{
     height: 40vh;
