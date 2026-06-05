@@ -1,9 +1,7 @@
 let baseDeDatosProductos = [];
 
-// Obtener productos desde el backend
 async function cargarProductosDesdeServidor() {
     try {
-        // REEMPLAZA ESTO POR TU URL REAL DE RENDER
         const respuesta = await fetch('https://danillanos-backend.onrender.com/api/productos'); 
         baseDeDatosProductos = await respuesta.json();
         
@@ -18,9 +16,8 @@ async function cargarProductosDesdeServidor() {
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    cargarProductosDesdeServidor(); // Llamar a la API al cargar la página
+    cargarProductosDesdeServidor();
     actualizarCarritoUI();
-    // ... (el resto de tus inicializadores como botones de checkout, etc)
 });
 
 let carrito = JSON.parse(localStorage.getItem('danillanos_carrito')) || [];
@@ -76,7 +73,6 @@ window.addToCart = function(id, fromCard = false) {
         if(tobeincart > max) { tobeincart = max }
         item.cantidad = tobeincart;
     } else {
-        // Guardamos el producto en el carrito, pero le forzamos la propiedad "precio" a ser el precio ya descontado.
         carrito.push({ ...producto, precio: precioParaCobrar, cantidad: cantidadAAgregar });
     }
     
@@ -85,7 +81,6 @@ window.addToCart = function(id, fromCard = false) {
     if (typeof enableCart === "function") enableCart();
 }
 
-// Nueva función para cambiar cantidades DESDE el carrito
 window.updateQty = function(id, change) {
     const item = carrito.find(p => p.id === id);
     let incart = parseInt(item.cantidad);
@@ -225,16 +220,15 @@ function generarCard(producto) {
     let precioParaMostrar = `$${producto.precio.toLocaleString('es-CO')}`;
     let etiquetaDescuento = '';
     
-    // Si el producto tiene la propiedad descuento y es mayor a 0
     if (producto.descuento && producto.descuento > 0) {
-        // Calculamos cuánto vale ahora
+
         const precioConDescuento = producto.precio - (producto.precio * (producto.descuento / 100));
-        // Tachamos el precio viejo y mostramos el nuevo en rojo
+
         precioParaMostrar = `
             <span style="text-decoration: line-through; font-size: 15px; color: var(--contrast); margin-right: 8px;">$${producto.precio.toLocaleString('es-CO')}</span>
             <span style="color: #d93025;">$${precioConDescuento.toLocaleString('es-CO')}</span>
         `;
-        // Etiqueta flotante
+
         etiquetaDescuento = `
             <span style="position:absolute; top:10px; right:10px; background:#d93025; color:white; font-weight:bold; padding:5px 10px; border-radius:20px; font-size:12px; z-index:2; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
                 -${producto.descuento}% OFERTA
