@@ -23,6 +23,7 @@
     --over: rgb(240, 240, 240);
     --gradient: rgb(20, 20, 20);
     --secondary-buttons: rgb(20, 20, 20);
+    view-transition-name: root;
 }
 
 .dark{
@@ -43,6 +44,7 @@
 *::selection{
     background-color: rgba(250, 73, 73, 0.658);
 }
+
 
 body{
     margin: 0;

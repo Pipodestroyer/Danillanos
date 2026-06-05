@@ -14,7 +14,6 @@ async function cargarProductosDesdeServidor() {
     }
 }
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductosDesdeServidor();
     actualizarCarritoUI();
